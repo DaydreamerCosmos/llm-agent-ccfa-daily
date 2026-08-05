@@ -1,0 +1,36 @@
+venues:
+  - name: ACL
+    area: natural_language_processing
+    ccf_note: Commonly treated as CCF-A in NLP.
+  - name: AAAI
+    area: artificial_intelligence
+    ccf_note: Commonly treated as CCF-A in AI.
+  - name: IJCAI
+    area: artificial_intelligence
+    ccf_note: Commonly treated as CCF-A in AI.
+  - name: NeurIPS
+    area: machine_learning
+    ccf_note: Common top ML venue; verify against the CCF list version used.
+  - name: ICML
+    area: machine_learning
+    ccf_note: Common top ML venue; verify against the CCF list version used.
+  - name: ICLR
+    area: machine_learning
+    ccf_note: Common top ML venue; CCF status may depend on list version.
+  - name: KDD
+    area: data_mining
+    ccf_note: Commonly treated as CCF-A in data mining.
+  - name: SIGIR
+    area: information_retrieval
+    ccf_note: Commonly treated as CCF-A in information retrieval.
+  - name: WWW
+    aliases:
+      - The Web Conference
+    area: web
+    ccf_note: Commonly treated as CCF-A in web/search areas.
+  - name: CVPR
+    area: computer_vision
+    ccf_note: Commonly treated as CCF-A in computer vision.
+  - name: ICCV
+    area: computer_vision
+    ccf_note: Commonly treated as CCF-A in computer vision.
