@@ -1,0 +1,34 @@
+include_keywords:
+  - large language model
+  - LLM
+  - foundation model
+  - multimodal large language model
+  - vision-language model
+  - reasoning
+  - retrieval-augmented generation
+  - RAG
+  - tool use
+  - agent
+  - multi-agent
+  - alignment
+  - safety
+  - evaluation
+  - efficient inference
+  - instruction tuning
+  - preference optimization
+
+exclude_ai4s_keywords:
+  - biology
+  - biomedical
+  - medicine
+  - medical imaging
+  - chemistry
+  - molecule
+  - drug discovery
+  - protein
+  - materials
+  - climate
+  - physics
+  - scientific discovery
+  - ai for science
+  - AI4S
