@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Example LLM Agent Paper",
+    "authors": ["A. Researcher", "B. Student"],
+    "venue": "ACL 2026",
+    "publication_date": "2026-07-15",
+    "abstract": "This example paper studies tool-using large language model agents.",
+    "paper_url": "https://example.com/paper",
+    "source_url": "https://example.com/proceedings",
+    "citation_count": 12,
+    "citation_source": "Semantic Scholar",
+    "citation_retrieved_at": "2026-08-05T09:00:00+08:00",
+    "code_url": "https://example.com/code"
+  }
+]
