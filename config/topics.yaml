@@ -10,8 +10,6 @@ include_keywords:
   - tool use
   - agent
   - multi-agent
-  - alignment
-  - safety
   - evaluation
   - efficient inference
   - instruction tuning
@@ -32,3 +30,32 @@ exclude_ai4s_keywords:
   - scientific discovery
   - ai for science
   - AI4S
+
+exclude_domain_keywords:
+  - safety
+  - safe
+  - jailbreak
+  - red team
+  - red-team
+  - adversarial attack
+  - prompt injection
+  - harmful
+  - toxicity
+  - robustness
+  - guardrail
+  - moderation
+  - alignment safety
+  - software engineering
+  - coding agent
+  - code agent
+  - agentic coding
+  - code generation
+  - code repair
+  - program repair
+  - repository
+  - SWE-Bench
+  - software
+  - bug fixing
+  - debugging
+  - unit test
+  - code review
