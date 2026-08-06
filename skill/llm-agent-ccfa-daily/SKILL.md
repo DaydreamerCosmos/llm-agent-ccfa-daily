@@ -5,16 +5,16 @@ description: Generate a daily Chinese PDF report of recent CCF-A large-language-
 
 # LLM Agent CCF-A Daily
 
-Use this skill when the user asks for a daily or one-off report about recent CCF-A papers in large language models, foundation models, multimodal LLMs, reasoning, RAG, tool use, AI agents, multi-agent systems, LLM evaluation, alignment, safety, or efficient training/inference.
+Use this skill when the user asks for a daily or one-off report about recent CCF-A papers in large language models, foundation models, multimodal LLMs, reasoning, RAG, tool use, AI agents, multi-agent systems, LLM evaluation, preference optimization, or efficient training/inference.
 
-Do not use this skill for AI4S/scientific-AI paper tracking.
+Do not use this skill for AI4S/scientific-AI, safety/security, or software-engineering/coding-agent paper tracking.
 
 ## Workflow
 
 1. Compute the search window as the latest 90 days from the current date.
 2. Search official conference, proceedings, Semantic Scholar, OpenAlex, Crossref, and paper/project pages.
 3. Keep only papers from CCF-A or CCF-A-oriented top conferences.
-4. Exclude AI4S/scientific-AI application papers.
+4. Exclude AI4S/scientific-AI, safety/security, and software-engineering/coding-agent papers.
 5. Query citation counts during the current run and record source plus retrieval time.
 6. Sort by citation count descending, then topic relevance, then date descending.
 7. Select up to 5 papers.
@@ -30,6 +30,8 @@ If the CCF status is ambiguous under different CCF list versions, mark it for hu
 ## Exclusion Guidance
 
 Reject papers whose primary contribution is in biology, chemistry, materials, drug discovery, proteins, climate, physics, medicine, medical imaging, or scientific discovery, even if the model is an LLM.
+
+Also reject safety/security and software-engineering/coding-agent papers, even if they are about LLMs or agents. Exclude jailbreak, red-team, prompt-injection, harmfulness, guardrail, moderation, adversarial robustness, software engineering, coding agents, SWE-Bench, code generation, code repair, debugging, repository navigation, unit-test repair, and code review.
 
 ## Reading Note Template
 
