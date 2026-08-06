@@ -23,8 +23,7 @@ Include topics such as:
 - AI agents;
 - multi-agent systems;
 - LLM evaluation;
-- alignment;
-- safety;
+- preference optimization;
 - efficient training and inference.
 
 Use only CCF-A or CCF-A-adjacent top conference sources. Prioritize ACL, AAAI, IJCAI, NeurIPS, ICML, ICLR, KDD, SIGIR, WWW/The Web Conference, CVPR, and ICCV.
@@ -36,6 +35,12 @@ Do not include journals, workshops, or arXiv-only preprints unless they can be l
 ## Exclusions
 
 Explicitly exclude AI4S/scientific-AI papers, including biology, chemistry, materials, drug discovery, proteins, climate, physics, medical imaging, scientific discovery, and similar application-first scientific domains.
+
+Also explicitly exclude safety/security papers and software-engineering/coding-agent papers, even when they are about LLMs or agents.
+
+Safety/security exclusions include jailbreak, red-team, prompt-injection, harmfulness, toxicity, guardrails, moderation, adversarial robustness, model safety, and alignment-safety papers.
+
+Software-engineering exclusions include coding agents, agentic coding, software engineering, SWE-Bench, code generation, code repair, bug fixing, debugging, repository navigation, unit-test repair, and code review papers.
 
 ## Citation Ranking
 
@@ -123,4 +128,8 @@ Subject:
 
 The email body should briefly list the top 5 titles and citation counts and state that the PDF is attached.
 
-If Gmail sending fails, keep the PDF path and report the failure reason in the Codex task. Do not retry more than twice.
+The PDF must be attached to the Gmail message as an application/pdf MIME attachment. Do not treat a local file path in the email body as successful delivery.
+
+If the polished PDF is too large or cannot be attached, generate a compact email-safe PDF version named `llm_agent_ccfa_daily_YYYY-MM-DD_email.pdf` and attach that instead.
+
+If Gmail attachment sending fails, retry at most twice: first with the original PDF, then with a compact PDF. Only if both attachment attempts fail, keep the PDF path and report the failure reason in the Codex task.
