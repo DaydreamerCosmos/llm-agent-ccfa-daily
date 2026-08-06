@@ -56,6 +56,13 @@ If fewer than 5 papers fully satisfy the criteria, report fewer than 5 and expla
 
 ## PDF Content
 
+Use a polished Chinese reading-report layout, not a raw Markdown dump:
+
+- prefer a readable Chinese font such as Microsoft YaHei, PingFang SC, Noto Sans CJK, Source Han Sans, or another high-quality CJK font available in the runtime;
+- use clear title, subtitle, small source note, table, section headings, and page numbers;
+- avoid dense walls of text; keep paragraph leading comfortable and leave spacing between reading-note sections;
+- verify rendered PDF pages before emailing and fix clipped text, awkward tables, unreadable glyphs, or overly cramped paragraphs.
+
 For each selected paper, include:
 
 - title;
@@ -68,18 +75,28 @@ For each selected paper, include:
 - original abstract summarized or lightly excerpted;
 - faithful Chinese abstract translation.
 
-Write reading notes using Li Mu's paper-reading method:
+Write reading notes using Li Mu's paper-reading method.
 
-- one-sentence summary;
-- background and motivation;
-- key insight;
-- method breakdown;
-- experiments and conclusions;
-- strengths;
-- limitations;
-- reproducibility and engineering cost;
-- 3 questions a student should ask;
-- at least 2 concrete innovation ideas.
+The notes should be detailed enough for a student to review later. For each paper, write at least 650-900 Chinese characters of notes, organized as:
+
+- First pass - what the paper is doing:
+  - one-sentence summary in the form "this paper turns problem A into method B and verifies conclusion C in setting D";
+  - concrete research problem;
+  - why the problem matters now.
+- Second pass - method:
+  - core hypothesis;
+  - method breakdown by input, model/algorithm, training or inference procedure, output, and metrics;
+  - difference from prior work or common baselines.
+- Third pass - experiments and trustworthiness:
+  - datasets, model scale, baselines, metrics, and ablations;
+  - 2-3 conclusions directly supported by experiments;
+  - evidence strength and remaining uncertainty.
+- Student viewpoint:
+  - strengths;
+  - limitations;
+  - reproducibility and engineering cost;
+  - 3 questions a student should ask;
+  - at least 2 concrete innovation ideas, each with an entry point, expected experiment, and risk.
 
 ## Combined Analysis
 
