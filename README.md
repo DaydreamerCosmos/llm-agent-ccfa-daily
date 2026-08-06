@@ -9,7 +9,7 @@ This repository packages the automation prompt, reusable Codex skill, and a Pyth
 - excluding AI4S application papers;
 - ranking candidates by current citation count;
 - producing Chinese reading notes using Li Mu's paper-reading method;
-- generating a PDF report and emailing it through Gmail inside Codex.
+- generating a polished Chinese PDF report and emailing it through Gmail inside Codex.
 
 ## What Is Included
 
@@ -18,6 +18,7 @@ This repository packages the automation prompt, reusable Codex skill, and a Pyth
 - `config/venues.yaml`: CCF-A-oriented venue allowlist and review notes.
 - `config/topics.yaml`: topic keywords and AI4S exclusion keywords.
 - `src/llm_agent_ccfa_daily/`: Python modules for candidate modeling, filtering, ranking, and report planning.
+- `src/llm_agent_ccfa_daily/pdf_report.py`: ReportLab-based PDF layout with CJK font fallback and a reading-report structure.
 
 ## Recommended Use
 
@@ -34,8 +35,21 @@ Each daily report should include:
 - top 5 table sorted by citation count;
 - title, authors, publication date, venue, links, citation count and source;
 - abstract Chinese translation;
-- reading notes: problem, motivation, key idea, method, experiments, strengths, limits, questions, and innovation ideas;
+- detailed Li Mu-style reading notes of roughly 650-900 Chinese characters per paper, including first-pass summary, method reading, experiment trustworthiness, reproducibility, student questions, and concrete innovation ideas;
 - combined trend summary and 7-day follow-up plan.
+
+## Local Preview
+
+You can render both Markdown and PDF from a candidate JSON file:
+
+```bash
+python -m llm_agent_ccfa_daily.cli \
+  --candidates examples/candidates.example.json \
+  --output reports/example_report.md \
+  --pdf-output reports/example_report.pdf
+```
+
+The PDF builder tries to use a high-quality local CJK font first, such as Microsoft YaHei, PingFang SC, Noto Sans CJK, or Source Han Sans. If none is available, it falls back to ReportLab's built-in Chinese CID font.
 
 ## Important Limitations
 
