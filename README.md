@@ -1,6 +1,6 @@
 # LLM Agent CCF-A Daily
 
-Daily Codex workflow for tracking recent CCF-A papers about large language models and AI agents, excluding AI4S/scientific-AI papers.
+Daily Codex workflow for tracking recent CCF-A papers about large language models and AI agents.
 
 This repository packages the automation prompt, reusable Codex skill, and a Python-friendly project skeleton for:
 
