@@ -33,18 +33,35 @@ Reject papers whose primary contribution is in biology, chemistry, materials, dr
 
 ## Reading Note Template
 
-For every selected paper, write:
+For every selected paper, write a detailed Li Mu-style reading note. The note should be useful to a student who wants to choose a research direction, so avoid short generic bullets. Aim for at least 650-900 Chinese characters per paper.
 
-- one-sentence summary;
-- background and motivation;
-- key insight;
-- method breakdown;
-- experiments and conclusions;
-- strengths;
-- limitations;
-- reproducibility and engineering cost;
-- 3 student questions;
-- at least 2 concrete innovation ideas.
+Use this structure:
+
+1. First pass - what the paper is doing:
+   - one-sentence summary;
+   - concrete research problem;
+   - why the problem matters now.
+2. Second pass - method:
+   - core hypothesis;
+   - method breakdown by input, model/algorithm, training or inference procedure, output, and metrics;
+   - difference from prior work or common baselines.
+3. Third pass - experiments and trustworthiness:
+   - datasets, model scale, baselines, metrics, and ablations;
+   - 2-3 conclusions directly supported by experiments;
+   - evidence strength and remaining uncertainty.
+4. Student viewpoint:
+   - strengths;
+   - limitations;
+   - reproducibility and engineering cost;
+   - 3 student questions;
+   - at least 2 concrete innovation ideas, each with an entry point, expected experiment, and risk.
+
+## PDF Layout Rules
+
+- Prefer Microsoft YaHei, PingFang SC, Noto Sans CJK, Source Han Sans, or another readable CJK font available in the runtime.
+- Use a clean reading-report layout with title, subtitle, compact source note, top-5 table, clear section headings, page numbers, and comfortable paragraph leading.
+- Avoid cramped all-bullet pages. Split each paper into abstract translation, first-pass notes, method notes, experiment notes, and student-viewpoint notes.
+- Render and inspect the PDF before delivery. Fix clipped text, broken CJK glyphs, awkward table wrapping, and crowded paragraphs.
 
 ## Quality Rules
 
