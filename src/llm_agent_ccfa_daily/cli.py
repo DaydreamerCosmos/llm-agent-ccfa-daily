@@ -7,6 +7,7 @@ from pathlib import Path
 
 from .filtering import load_yaml, rank_candidates
 from .models import PaperCandidate
+from .pdf_report import build_pdf_report
 from .report_outline import build_markdown_report
 
 
@@ -43,6 +44,7 @@ def main() -> None:
     parser.add_argument("--venues", default=Path("config/venues.yaml"), type=Path)
     parser.add_argument("--topics", default=Path("config/topics.yaml"), type=Path)
     parser.add_argument("--output", default=Path("report.md"), type=Path)
+    parser.add_argument("--pdf-output", type=Path)
     parser.add_argument("--today", default=date.today().isoformat())
     args = parser.parse_args()
 
@@ -54,6 +56,8 @@ def main() -> None:
     papers = rank_candidates(load_candidates(args.candidates), today=today, config=config)
     markdown = build_markdown_report(today, today - timedelta(days=90), papers)
     args.output.write_text(markdown, encoding="utf-8")
+    if args.pdf_output:
+        build_pdf_report(today, today - timedelta(days=90), papers, args.pdf_output)
 
 
 if __name__ == "__main__":
