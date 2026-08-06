@@ -80,7 +80,7 @@ def topic_score(paper: PaperCandidate, include_keywords: list[str]) -> int:
     return sum(1 for keyword in include_keywords if keyword.lower() in text)
 
 
-def ai4s_flags(paper: PaperCandidate, exclude_keywords: list[str]) -> list[str]:
+def exclusion_flags(paper: PaperCandidate, exclude_keywords: list[str]) -> list[str]:
     text = f"{paper.title}\n{paper.abstract}".lower()
     return [keyword for keyword in exclude_keywords if keyword.lower() in text]
 
@@ -97,7 +97,10 @@ def rank_candidates(
     limit: int = 5,
 ) -> list[RankedPaper]:
     include_keywords = config["topics"]["include_keywords"]
-    exclude_keywords = config["topics"]["exclude_ai4s_keywords"]
+    exclude_keywords = [
+        *config["topics"].get("exclude_ai4s_keywords", []),
+        *config["topics"].get("exclude_domain_keywords", []),
+    ]
     venue_names = []
     for venue in config["venues"]["venues"]:
         venue_names.append(venue["name"])
@@ -105,7 +108,7 @@ def rank_candidates(
 
     ranked: list[RankedPaper] = []
     for paper in candidates:
-        flags = ai4s_flags(paper, exclude_keywords)
+        flags = exclusion_flags(paper, exclude_keywords)
         score = topic_score(paper, include_keywords)
         if flags or score == 0:
             continue
@@ -113,7 +116,7 @@ def rank_candidates(
             continue
         if not venue_allowed(paper, venue_names):
             continue
-        ranked.append(RankedPaper(rank=0, paper=paper, relevance_score=score))
+        ranked.append(RankedPaper(rank=0, paper=paper, relevance_score=score, exclusion_flags=flags))
 
     ranked.sort(
         key=lambda item: (
